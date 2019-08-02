@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <!--https://stackoverflow.com/questions/9114587/
+        how-can-i-save-colors-in-array-xml-and-get-its-back-to-color-array -->
+
+        <!--Declaring colors -->
+        <color name="colorPrimary">#008577</color>
+        <color name="colorPrimaryDark">#00574B</color>
+        <color name="colorAccent">#D81B60</color>
+
+    <!--Defining colors for each country -->
+        <color name="description">#FFFFFF</color>
+        <color name="chetwode_blue">#FBF9DF</color>
+        <color name="east_bay">#F7F3BF</color>
+        <color name="near_pale_chestnut">#F3ED9F</color>
+        <color name="strong_red">#EFE87E</color>
+        <color name="cerulean_blue">#EBE25E</color>
+        <color name="lawn_green">#E7DC3E</color>
+        <color name="danfo_yellow">#E3D61E</color>
+
+        <!--Creating an array of colours for each country -->
+        <array name="border_colors">
+            <item>@color/chetwode_blue</item>
+            <item>@color/east_bay</item>
+            <item>@color/near_pale_chestnut</item>
+            <item>@color/strong_red</item>
+            <item>@color/cerulean_blue</item>
+            <item>@color/lawn_green</item>
+            <item>@color/danfo_yellow</item>
+        </array>
+</resources>

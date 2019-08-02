@@ -1,0 +1,18 @@
+<resources>
+
+    <!--App Name-->
+    <string name="app_name">GCUWeather App</string>
+
+    <!--List of city names on home Page -->
+    <string-array name="list_city_name">
+        <item>Tap on the city name to see
+        the weather of your favourite cities</item>
+        <item>Glasgow</item>
+        <item>London</item>
+        <item>New York</item>
+        <item>Muscat</item>
+        <item>Port Louis</item>
+        <item>Dhaka</item>
+        <item>Lagos</item>
+    </string-array>
+</resources>
