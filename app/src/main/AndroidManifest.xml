@@ -16,8 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WeatherActivity">
-
+        <activity android:name=".WeatherActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/weather_activity_id">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
         </activity>
         <meta-data
             android:name="preloaded_fonts"

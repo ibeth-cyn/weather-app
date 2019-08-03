@@ -5,27 +5,28 @@ import android.support.v4.content.ContextCompat;
 
 public class BorderColorSelection {
 
+     static int[] borderList = new int[]{R.drawable.chetwode_blue,R.drawable.east_bay,R.drawable.near_pale_chestnut,
+        R.drawable.strong_red,R.drawable.cerulean_blue,R.drawable.lawn_green,R.drawable.danfo_yellow};
+
     public static int getViewHolderBackgroundFromInstance(Context context, int instanceNumber){
         switch (instanceNumber){
             case 0:
-                return ContextCompat.getColor(context, R.color.description);
+                return borderList[0];
             case 1:
-                return ContextCompat.getColor(context,R.color.chetwode_blue);
+                return borderList[1];
             case 2:
-                return ContextCompat.getColor(context,R.color.east_bay);
+                return borderList[2];
             case 3:
-                return ContextCompat.getColor(context,R.color.near_pale_chestnut);
+                return borderList[3];
             case 4:
-                return ContextCompat.getColor(context,R.color.strong_red);
+                return borderList[4];
             case 5:
-                return ContextCompat.getColor(context,R.color.cerulean_blue);
+                return borderList[5];
             case 6:
-                return ContextCompat.getColor(context,R.color.lawn_green);
-            case 7:
-                return ContextCompat.getColor(context,R.color.danfo_yellow);
+                return borderList[6];
 
             default:
-                return ContextCompat.getColor(context,R.color.east_bay);
+                return borderList[0];
         }
     }
 }

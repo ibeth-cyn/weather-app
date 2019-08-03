@@ -20,6 +20,7 @@ public class CityNameAdapter extends
     private static int viewHolderCount;
 
 
+
     public CityNameAdapter(Context context,String[] mCityName){
         mInflater = LayoutInflater.from(context);
         this.mCityName = mCityName;
@@ -33,9 +34,9 @@ public class CityNameAdapter extends
         View mItemView = mInflater.inflate(R.layout.city_name, viewGroup ,false);
         CityViewHolder viewHolder = new CityViewHolder(mItemView,this);
 
-        int backgroundColorForViewHolder = BorderColorSelection.
+        int backgroundForViewHolder = BorderColorSelection.
                 getViewHolderBackgroundFromInstance(context, viewHolderCount);
-        viewHolder.cityNameView.setBackgroundColor(backgroundColorForViewHolder);
+        viewHolder.cityNameView.setBackgroundResource(backgroundForViewHolder);
 
         viewHolderCount++;
         return new CityViewHolder(mItemView, this);
@@ -68,7 +69,6 @@ public class CityNameAdapter extends
                     Intent intent = new Intent(v.getContext(),WeatherActivity.class);
                     intent.putExtra("city name",mCityName);
                     v.getContext().startActivity(intent);
-//                    startActivity(v.getContext(),intent);
                 }
             });
         }
