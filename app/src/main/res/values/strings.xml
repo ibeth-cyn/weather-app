@@ -15,13 +15,4 @@
         <item>Lagos</item>
     </string-array>
 
-    <string-array name="city_id">
-        <item>2648579</item>
-        <item>2643743</item>
-        <item>5128581</item>
-        <item>287286</item>
-        <item>934154</item>
-        <item>1185241</item>
-        <item>2332459</item>
-    </string-array>
 </resources>

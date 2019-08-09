@@ -1,5 +1,8 @@
-package android.example.gcuweatherapp;
+package android.example.gcuweatherapp.HomePage;
 
+import android.example.gcuweatherapp.HomePage.CityNameAdapter;
+import android.example.gcuweatherapp.R;
+import android.example.gcuweatherapp.RSSFeed.RSSFeed;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,5 +32,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(cityNameAdapter);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        new RSSFeed(this).execute();
     }
 }

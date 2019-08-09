@@ -1,7 +1,9 @@
-package android.example.gcuweatherapp;
+package android.example.gcuweatherapp.HomePage;
 
 import android.content.Context;
 import android.content.Intent;
+import android.example.gcuweatherapp.R;
+import android.example.gcuweatherapp.DaysPage.WeatherActivity;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -66,8 +68,8 @@ public class CityNameAdapter extends
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(v.getContext(),WeatherActivity.class);
-                    intent.putExtra("city name",mCityName);
+                    Intent intent = new Intent(v.getContext(), WeatherActivity.class);
+                    //intent.putExtra("city name",mCityName);
                     v.getContext().startActivity(intent);
                 }
             });

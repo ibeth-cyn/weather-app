@@ -1,6 +1,7 @@
-package android.example.gcuweatherapp;
+package android.example.gcuweatherapp.HomePage;
 
 import android.content.Context;
+import android.example.gcuweatherapp.R;
 import android.support.v4.content.ContextCompat;
 
 public class BorderColorSelection {
