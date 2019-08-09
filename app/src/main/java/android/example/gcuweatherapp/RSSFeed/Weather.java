@@ -1,24 +1,43 @@
 package android.example.gcuweatherapp.RSSFeed;
 
 public class Weather {
-    public String MINIMUM_TEMPERATURE;
-    public String MAXIMUM_TEMPERATURE;
-    public String WIND_DIRECTION;
-    public String WIND_SPEED;
-    public String VISIBILITY;
-    public String PRESSURE ;
-    public String HUMIDITY;
-    public String UV_RISK;
-    public String POLLUTION;
-    public String SUNSET;
-    public String SUNRISE;
-    public String DATE;
-    public String DAY;
-    public String TONIGHT;
-    public String RAIN;
-    public String WEATHER_DESCRIPTOR;
 
+    private String title;
+    private String description;
+    private String publicationDate;
+
+    //TODO: Added title, desc and pubdate here -f
+    private String MINIMUM_TEMPERATURE;
+    private String MAXIMUM_TEMPERATURE;
+    private String WIND_DIRECTION;
+    private String WIND_SPEED;
+    private String VISIBILITY;
+    private String PRESSURE ;
+    private String HUMIDITY;
+    private String UV_RISK;
+    private String POLLUTION;
+    private String SUNSET;
+    private String SUNRISE;
+    private String DATE;
+    private String DAY;
+    private String TONIGHT;
+    private String RAIN;
+    private String WEATHER_DESCRIPTOR;
+
+    public Weather(String title, String description) {
+        this.title = title;
+        this.description = description;
+    }
+
+    public Weather() {
+    }
+
+    //public void splitValues(String title, String description){
     public void splitValues(String title, String description){
+
+        this.title = title;
+        this.description = description;
+
         String COMMA_DELIMITER = ",";
         String COLON_DELIMITER = ":";
 
@@ -56,6 +75,31 @@ public class Weather {
         }
 
     }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getPublicationDate() {
+        return publicationDate;
+    }
+
+    public void setPublicationDate(String publicationDate) {
+        this.publicationDate = publicationDate;
+    }
+
     public String getMINIMUM_TEMPERATURE() {
         return MINIMUM_TEMPERATURE;
     }
@@ -182,5 +226,28 @@ public class Weather {
 
     public void setWEATHER_DESCRIPTOR(String WEATHER_DESCRIPTOR){
         this.WEATHER_DESCRIPTOR = WEATHER_DESCRIPTOR;
+    }
+
+    @Override
+    public String toString() {
+        return "Weather{" +
+                "publicationDate='" + publicationDate + '\'' +
+                ", MINIMUM_TEMPERATURE='" + MINIMUM_TEMPERATURE + '\'' +
+                ", MAXIMUM_TEMPERATURE='" + MAXIMUM_TEMPERATURE + '\'' +
+                ", WIND_DIRECTION='" + WIND_DIRECTION + '\'' +
+                ", WIND_SPEED='" + WIND_SPEED + '\'' +
+                ", VISIBILITY='" + VISIBILITY + '\'' +
+                ", PRESSURE='" + PRESSURE + '\'' +
+                ", HUMIDITY='" + HUMIDITY + '\'' +
+                ", UV_RISK='" + UV_RISK + '\'' +
+                ", POLLUTION='" + POLLUTION + '\'' +
+                ", SUNSET='" + SUNSET + '\'' +
+                ", SUNRISE='" + SUNRISE + '\'' +
+                ", DATE='" + DATE + '\'' +
+                ", DAY='" + DAY + '\'' +
+                ", TONIGHT='" + TONIGHT + '\'' +
+                ", RAIN='" + RAIN + '\'' +
+                ", WEATHER_DESCRIPTOR='" + WEATHER_DESCRIPTOR + '\'' +
+                '}';
     }
 }

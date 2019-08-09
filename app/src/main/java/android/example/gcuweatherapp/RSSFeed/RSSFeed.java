@@ -2,6 +2,7 @@ package android.example.gcuweatherapp.RSSFeed;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.support.annotation.ArrayRes;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -14,10 +15,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
-public class RSSFeed extends AsyncTask<String, Void, HashMap<String,ArrayList<RSSItemClass>>>{
+public class RSSFeed extends AsyncTask<String, Void, HashMap<String,ArrayList<Weather>>>{
 
     String BASE_URL = "https://weather-broker-cdn.api.bbci.co.uk/en/forecast/rss/3day/";
-    ArrayList<RSSItemClass> newItem;
+    ArrayList<Weather> newItem;
     Exception exception = null;
 
     Context c;
@@ -39,18 +40,18 @@ public class RSSFeed extends AsyncTask<String, Void, HashMap<String,ArrayList<RS
     }
 
     @Override
-    protected HashMap<String,ArrayList<RSSItemClass>> doInBackground(String... strings) {
+    protected HashMap<String,ArrayList<Weather>> doInBackground(String... strings) {
 
         //TODO: removed newItem here -f
-        HashMap<String,ArrayList<RSSItemClass>> list = new HashMap<>();
+        HashMap<String,ArrayList<Weather>> list = new HashMap<>();
 
         for (String loc : mapLocationID.keySet()) {
 
-            newItem = new ArrayList<RSSItemClass>();
+            newItem = new ArrayList<Weather>();
             String locationID = mapLocationID.get(loc);
 
             try {
-                RSSItemClass item = null;
+                Weather item = null;
                 URL url = new URL(BASE_URL + locationID);
                 XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
                 factory.setNamespaceAware(false);
@@ -67,7 +68,7 @@ public class RSSFeed extends AsyncTask<String, Void, HashMap<String,ArrayList<RS
                     if (eventType == XmlPullParser.START_TAG) {
                         if (xpp.getName().equalsIgnoreCase("item")) {
                             insideItem = true;
-                            item = new RSSItemClass();
+                            item = new Weather();
                         } else if (xpp.getName().equalsIgnoreCase("title")) {
                             if (insideItem) {
                                 item.setTitle(xpp.nextText());
@@ -98,18 +99,29 @@ public class RSSFeed extends AsyncTask<String, Void, HashMap<String,ArrayList<RS
             }
 
         }
-
-        System.out.println(list.get("Port Louis").get(0).toString());
         return list;
 
     }
 
     @Override
-    protected void onPostExecute(HashMap<String, ArrayList<RSSItemClass>> stringArrayListHashMap) {
+    protected void onPostExecute(HashMap<String, ArrayList<Weather>> stringArrayListHashMap) {
         super.onPostExecute(stringArrayListHashMap);
 
-        System.out.println("--------------NIGERIA -----------");
-        System.out.println(stringArrayListHashMap.get("Lagos").get(0).toString());
+        String key;
+
+        for(HashMap.Entry<String, ArrayList<Weather>> entry : stringArrayListHashMap.entrySet()){
+
+            key = entry.getKey();
+            ArrayList<Weather> arrayList = stringArrayListHashMap.get(key);
+
+            //Loop through array list to get weather objects, call split method on object
+            for(int i  = 0; i< arrayList.size(); i++){
+                Weather weather = arrayList.get(i);
+                weather.splitValues(weather.getTitle(), weather.getDescription());
+            }
+
+            System.out.println("GGGGGGGGGGGGGGGGGGGGGG" + " " + " ---CITY--- "+ key + " " + arrayList.get(0).toString());
+        }
 
     }
 }
