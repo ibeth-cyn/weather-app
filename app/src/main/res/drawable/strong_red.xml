@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Name: Elizabeth Michael Akpan -->
+<!--Matric Number: S1719014 -->
+<!-- Helpful resource: https://stackoverflow.com/questions/16161448/how-to-make-layout-with-rounded-corners -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="#ffffffff"/>
 

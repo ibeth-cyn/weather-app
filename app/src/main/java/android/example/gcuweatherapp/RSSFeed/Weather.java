@@ -6,23 +6,22 @@ public class Weather {
     private String description;
     private String publicationDate;
 
-    //TODO: Added title, desc and pubdate here -f
-    private String MINIMUM_TEMPERATURE;
-    private String MAXIMUM_TEMPERATURE;
-    private String WIND_DIRECTION;
-    private String WIND_SPEED;
-    private String VISIBILITY;
-    private String PRESSURE ;
-    private String HUMIDITY;
-    private String UV_RISK;
-    private String POLLUTION;
-    private String SUNSET;
-    private String SUNRISE;
-    private String DATE;
-    private String DAY;
-    private String TONIGHT;
-    private String RAIN;
-    private String WEATHER_DESCRIPTOR;
+    private String minimumTemperature;
+    private String maximumTemperature;
+    private String windDirection;
+    private String windSpeed;
+    private String visibility;
+    private String pressure ;
+    private String humidity;
+    private String uvRisk;
+    private String pollution;
+    private String sunset;
+    private String sunrise;
+    private String date;
+    private String day;
+    private String tonight;
+    private String rain;
+    private String weatherDescription;
 
     public Weather(String title, String description) {
         this.title = title;
@@ -38,40 +37,40 @@ public class Weather {
         this.title = title;
         this.description = description;
 
-        String COMMA_DELIMITER = ",";
-        String COLON_DELIMITER = ":";
+        final String COMMA_DELIMITER = ",";
+        final String COLON_DELIMITER = ":";
 
         String splitTitle [] = title.split(COMMA_DELIMITER);
         String day = splitTitle[0].split(COLON_DELIMITER)[0];
-        WEATHER_DESCRIPTOR = splitTitle[0].split(COLON_DELIMITER)[1];
+        weatherDescription = splitTitle[0].split(COLON_DELIMITER)[1];
 
         String splitDescription [] = description.split(COMMA_DELIMITER);
             if(splitDescription.length == 11){
-                MAXIMUM_TEMPERATURE = splitDescription[0].split(COLON_DELIMITER)[1].
+                maximumTemperature = splitDescription[0].split(COLON_DELIMITER)[1].
                         substring(1,5);
-                MINIMUM_TEMPERATURE = splitDescription[1].split(COLON_DELIMITER)[1].
+                minimumTemperature = splitDescription[1].split(COLON_DELIMITER)[1].
                         substring(1,5);
-                WIND_DIRECTION = splitDescription[2].split(COLON_DELIMITER)[1];
-                WIND_SPEED = splitDescription[3].split(COLON_DELIMITER)[1];
-                VISIBILITY = splitDescription[4].split(COLON_DELIMITER)[1];
-                PRESSURE = splitDescription[5].split(COLON_DELIMITER)[1];
-                HUMIDITY = splitDescription[6].split(COLON_DELIMITER)[1];
-                UV_RISK = splitDescription[7].split(COLON_DELIMITER)[1];
-                POLLUTION = splitDescription[8].split(COLON_DELIMITER)[1];
-                SUNRISE = splitDescription[9].split(COLON_DELIMITER)[1];
-                SUNSET = splitDescription[10].split(COLON_DELIMITER)[1];
+                windDirection = splitDescription[2].split(COLON_DELIMITER)[1];
+                windSpeed = splitDescription[3].split(COLON_DELIMITER)[1];
+                visibility = splitDescription[4].split(COLON_DELIMITER)[1];
+                pressure = splitDescription[5].split(COLON_DELIMITER)[1];
+                humidity = splitDescription[6].split(COLON_DELIMITER)[1];
+                uvRisk = splitDescription[7].split(COLON_DELIMITER)[1];
+                pollution = splitDescription[8].split(COLON_DELIMITER)[1];
+                sunrise = splitDescription[9].split(COLON_DELIMITER)[1];
+                sunset = splitDescription[10].split(COLON_DELIMITER)[1];
             }
             else if(splitDescription.length == 9){
-                MINIMUM_TEMPERATURE = splitDescription[0].split(COLON_DELIMITER)[1].
+                maximumTemperature = splitDescription[0].split(COLON_DELIMITER)[1].
                         substring(1,5);
-                WIND_DIRECTION = splitDescription[1].split(COLON_DELIMITER)[1];
-                WIND_SPEED = splitDescription[2].split(COLON_DELIMITER)[1];
-                VISIBILITY = splitDescription[3].split(COLON_DELIMITER)[1];
-                PRESSURE = splitDescription[4].split(COLON_DELIMITER)[1];
-                HUMIDITY = splitDescription[5].split(COLON_DELIMITER)[1];
-                UV_RISK = splitDescription[6].split(COLON_DELIMITER)[1];
-                POLLUTION = splitDescription[7].split(COLON_DELIMITER)[1];
-                SUNSET = splitDescription[8].split(COLON_DELIMITER)[1];
+                windDirection = splitDescription[1].split(COLON_DELIMITER)[1];
+                windSpeed = splitDescription[2].split(COLON_DELIMITER)[1];
+                visibility = splitDescription[3].split(COLON_DELIMITER)[1];
+                pressure = splitDescription[4].split(COLON_DELIMITER)[1];
+                humidity = splitDescription[5].split(COLON_DELIMITER)[1];
+                uvRisk = splitDescription[6].split(COLON_DELIMITER)[1];
+                pollution = splitDescription[7].split(COLON_DELIMITER)[1];
+                sunset = splitDescription[8].split(COLON_DELIMITER)[1];
         }
 
     }
@@ -100,154 +99,155 @@ public class Weather {
         this.publicationDate = publicationDate;
     }
 
-    public String getMINIMUM_TEMPERATURE() {
-        return MINIMUM_TEMPERATURE;
+    public String getMinimumTemperature() {
+        return minimumTemperature;
     }
 
-    public void setMINIMUM_TEMPERATURE(String MINIMUM_TEMPERATURE) {
-        this.MINIMUM_TEMPERATURE = MINIMUM_TEMPERATURE;
+    public void setMinimumTemperature(String minimumTemperature) {
+        this.minimumTemperature = minimumTemperature;
     }
 
-    public String getMAXIMUM_TEMPERATURE() {
-        return MAXIMUM_TEMPERATURE;
+    public String getMaximumTemperature() {
+        return maximumTemperature;
     }
 
-    public void setMAXIMUM_TEMPERATURE(String MAXIMUM_TEMPERATURE) {
-        this.MAXIMUM_TEMPERATURE = MAXIMUM_TEMPERATURE;
+    public void setMaximumTemperature(String maximumTemperature) {
+        this.maximumTemperature = maximumTemperature;
     }
 
-    public String getWIND_DIRECTION() {
-        return WIND_DIRECTION;
+    public String getWindDirection() {
+        return windDirection;
     }
 
-    public void setWIND_DIRECTION(String WIND_DIRECTION) {
-        this.WIND_DIRECTION = WIND_DIRECTION;
+    public void setWindDirection(String windDirection) {
+        this.windDirection = windDirection;
     }
 
-    public String getWIND_SPEED() {
-        return WIND_SPEED;
+    public String getWindSpeed() {
+        return windSpeed;
     }
 
-    public void setWIND_SPEED(String WIND_SPEED) {
-        this.WIND_SPEED = WIND_SPEED;
+    public void setWindSpeed(String windSpeed) {
+        this.windSpeed = windSpeed;
     }
 
-    public String getVISIBILITY() {
-        return VISIBILITY;
+    public String getVisibility() {
+        return visibility;
     }
 
-    public void setVISIBILITY(String VISIBILITY) {
-        this.VISIBILITY = VISIBILITY;
+    public void setVisibility(String visibility) {
+        this.visibility = visibility;
     }
 
-    public String getPRESSURE() {
-        return PRESSURE;
+    public String getPressure() {
+        return pressure;
     }
 
-    public void setPRESSURE(String PRESSURE) {
-        this.PRESSURE = PRESSURE;
+    public void setPressure(String pressure) {
+        this.pressure = pressure;
     }
 
-    public String getHUMIDITY() {
-        return HUMIDITY;
+    public String getHumidity() {
+        return humidity;
     }
 
-    public void setHUMIDITY(String HUMIDITY) {
-        this.HUMIDITY = HUMIDITY;
+    public void setHumidity(String humidity) {
+        this.humidity = humidity;
     }
 
-    public String getUV_RISK() {
-        return UV_RISK;
+    public String getUvRisk() {
+        return uvRisk;
     }
 
-    public void setUV_RISK(String UV_RISK) {
-        this.UV_RISK = UV_RISK;
+    public void setUvRisk(String uvRisk) {
+        this.uvRisk = uvRisk;
     }
 
-    public String getPOLLUTION() {
-        return POLLUTION;
+    public String getPollution() {
+        return pollution;
     }
 
-    public void setPOLLUTION(String POLLUTION) {
-        this.POLLUTION = POLLUTION;
+    public void setPollution(String pollution) {
+        this.pollution = pollution;
     }
 
-    public String getSUNSET() {
-        return SUNSET;
+    public String getSunset() {
+        return sunset;
     }
 
-    public void setSUNSET(String SUNSET) {
-        this.SUNSET = SUNSET;
+    public void setSunset(String sunset) {
+        this.sunset = sunset;
     }
 
-    public String getSUNRISE() {
-        return SUNRISE;
+    public String getSunrise() {
+        return sunrise;
     }
 
-    public void setSUNRISE(String SUNRISE) {
-        this.SUNRISE = SUNRISE;
+    public void setSunrise(String sunrise) {
+        this.sunrise = sunrise;
     }
 
-    public String getDATE() {
-        return DATE;
+    public String getDate() {
+        return date;
     }
 
-    public void setDATE(String DATE) {
-        this.DATE = DATE;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public String getDAY() {
-        return DAY;
+    public String getDay() {
+        return day;
     }
 
-    public void setDAY(String DAY) {
-        this.DAY = DAY;
+    public void setDay(String day) {
+        this.day = day;
     }
 
-    public String getTONIGHT() {
-        return TONIGHT;
+    public String getTonight() {
+        return tonight;
     }
 
-    public void setTONIGHT(String TONIGHT) {
-        this.TONIGHT = TONIGHT;
+    public void setTonight(String tonight) {
+        this.tonight = tonight;
     }
 
-    public String getRAIN() {
-        return RAIN;
+    public String getRain() {
+        return rain;
     }
 
-    public void setRAIN(String RAIN) {
-        this.RAIN = RAIN;
+    public void setRain(String rain) {
+        this.rain = rain;
     }
 
-    public String getWEATHER_DESCRIPTOR(){
-        return WEATHER_DESCRIPTOR;
+    public String getWeatherDescription(){
+
+        return weatherDescription;
     }
 
-    public void setWEATHER_DESCRIPTOR(String WEATHER_DESCRIPTOR){
-        this.WEATHER_DESCRIPTOR = WEATHER_DESCRIPTOR;
+    public void setWeatherDescription(String weatherDescription){
+        this.weatherDescription = weatherDescription;
     }
 
     @Override
     public String toString() {
         return "Weather{" +
                 "publicationDate='" + publicationDate + '\'' +
-                ", MINIMUM_TEMPERATURE='" + MINIMUM_TEMPERATURE + '\'' +
-                ", MAXIMUM_TEMPERATURE='" + MAXIMUM_TEMPERATURE + '\'' +
-                ", WIND_DIRECTION='" + WIND_DIRECTION + '\'' +
-                ", WIND_SPEED='" + WIND_SPEED + '\'' +
-                ", VISIBILITY='" + VISIBILITY + '\'' +
-                ", PRESSURE='" + PRESSURE + '\'' +
-                ", HUMIDITY='" + HUMIDITY + '\'' +
-                ", UV_RISK='" + UV_RISK + '\'' +
-                ", POLLUTION='" + POLLUTION + '\'' +
-                ", SUNSET='" + SUNSET + '\'' +
-                ", SUNRISE='" + SUNRISE + '\'' +
-                ", DATE='" + DATE + '\'' +
-                ", DAY='" + DAY + '\'' +
-                ", TONIGHT='" + TONIGHT + '\'' +
-                ", RAIN='" + RAIN + '\'' +
-                ", WEATHER_DESCRIPTOR='" + WEATHER_DESCRIPTOR + '\'' +
+                ", minimumTemperature='" + minimumTemperature + '\'' +
+                ", maximumTemperature='" + maximumTemperature + '\'' +
+                ", windDirection='" + windDirection + '\'' +
+                ", windSpeed='" + windSpeed + '\'' +
+                ", visibility='" + visibility + '\'' +
+                ", pressure='" + pressure + '\'' +
+                ", humidity='" + humidity + '\'' +
+                ", uvRisk='" + uvRisk + '\'' +
+                ", pollution='" + pollution + '\'' +
+                ", sunset='" + sunset + '\'' +
+                ", sunrise='" + sunrise + '\'' +
+                ", date='" + date + '\'' +
+                ", day='" + day + '\'' +
+                ", tonight='" + tonight + '\'' +
+                ", rain='" + rain + '\'' +
+                ", weatherDescription='" + weatherDescription + '\'' +
                 '}';
     }
 }

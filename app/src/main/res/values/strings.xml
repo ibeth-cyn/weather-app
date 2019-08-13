@@ -1,5 +1,6 @@
 <resources>
-
+    <!-- Name: Elizabeth Michael Akpan -->
+    <!--Matric Number: S1719014 -->
     <!--App Name-->
     <string name="app_name">GCUWeather App</string>
     <string name="weather_activity_id">Weather Activity</string>
@@ -13,6 +14,7 @@
         <item>Port Louis</item>
         <item>Dhaka</item>
         <item>Lagos</item>
+        <item>Elizabeth Akpan | S1719014</item>
     </string-array>
 
 </resources>

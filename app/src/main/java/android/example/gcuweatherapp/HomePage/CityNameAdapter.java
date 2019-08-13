@@ -47,6 +47,7 @@ public class CityNameAdapter extends
     @Override
     public void onBindViewHolder(CityViewHolder cityViewHolder, int i) {
         String mCurrent = mCityName[i];
+        cityViewHolder.mCurr=mCityName[i];
         cityViewHolder.cityNameView.setText(mCurrent);
     }
 
@@ -59,6 +60,7 @@ public class CityNameAdapter extends
 
         public final TextView cityNameView;
         final CityNameAdapter mAdapter;
+        String mCurr;
 
         public CityViewHolder(View itemView, CityNameAdapter adapter) {
             super(itemView);
@@ -69,7 +71,7 @@ public class CityNameAdapter extends
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(v.getContext(), WeatherActivity.class);
-                    //intent.putExtra("city name",mCityName);
+                    intent.putExtra("cityName",mCurr);
                     v.getContext().startActivity(intent);
                 }
             });

@@ -33,7 +33,6 @@ public class RSSFeed extends AsyncTask<String, Void, HashMap<String,ArrayList<We
         put("Lagos", "2332459");
     }};
     InputUrl newInput = new InputUrl();
-    //TODO: removed hashmap here
 
     public RSSFeed(Context c) {
         this.c = c;
@@ -42,7 +41,6 @@ public class RSSFeed extends AsyncTask<String, Void, HashMap<String,ArrayList<We
     @Override
     protected HashMap<String,ArrayList<Weather>> doInBackground(String... strings) {
 
-        //TODO: removed newItem here -f
         HashMap<String,ArrayList<Weather>> list = new HashMap<>();
 
         for (String loc : mapLocationID.keySet()) {
@@ -122,6 +120,8 @@ public class RSSFeed extends AsyncTask<String, Void, HashMap<String,ArrayList<We
 
             System.out.println("GGGGGGGGGGGGGGGGGGGGGG" + " " + " ---CITY--- "+ key + " " + arrayList.get(0).toString());
         }
+
+//        DataStore.setWeatherData(stringArrayListHashMap);
 
     }
 }
