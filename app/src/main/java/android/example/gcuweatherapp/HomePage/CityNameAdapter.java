@@ -12,6 +12,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
+/**
+ * Name: Elizabeth Michael Akpan
+ * Matric Number: S1719014
+ */
 public class CityNameAdapter extends
         RecyclerView.Adapter<CityNameAdapter.CityViewHolder> {
 

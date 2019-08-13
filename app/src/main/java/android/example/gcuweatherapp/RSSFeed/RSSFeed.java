@@ -15,6 +15,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
+/**
+ * Name: Elizabeth Michael Akpan
+ * Matric Number: S1719014
+ */
 public class RSSFeed extends AsyncTask<String, Void, HashMap<String,ArrayList<Weather>>>{
 
     String BASE_URL = "https://weather-broker-cdn.api.bbci.co.uk/en/forecast/rss/3day/";

@@ -2,6 +2,10 @@ package android.example.gcuweatherapp.DaysPage;
 
 import android.example.gcuweatherapp.R;
 
+/**
+ * Name: Elizabeth Michael Akpan
+ * Matric Number: S1719014
+ */
 public class WeatherIconSelection {
 
     public static int getWeatherDescriptorIcon(String rainProbability){

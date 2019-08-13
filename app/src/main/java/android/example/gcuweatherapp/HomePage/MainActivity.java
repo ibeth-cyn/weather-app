@@ -15,6 +15,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
+/**
+ * Name: Elizabeth Michael Akpan
+ * Matric Number: S1719014
+ */
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
@@ -47,10 +51,7 @@ public class MainActivity extends AppCompatActivity {
         rss.execute();
         try {
             HashMap<String, ArrayList<Weather>> weatherData = rss.get();
-            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"+
-                    "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-            System.out.println(weatherData.keySet());
-            System.out.println(weatherData.get("Glasgow"));
+            weatherData.keySet();
             DataStore.setWeatherData(weatherData);
         } catch (ExecutionException e) {
             e.printStackTrace();

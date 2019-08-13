@@ -4,6 +4,10 @@ import android.content.Context;
 import android.example.gcuweatherapp.R;
 import android.support.v4.content.ContextCompat;
 
+/**
+ * Name: Elizabeth Michael Akpan
+ * Matric Number: S1719014
+ */
 public class BorderColorSelection {
 
      static int[] borderList = new int[]{R.drawable.chetwode_blue,R.drawable.east_bay,R.drawable.near_pale_chestnut,

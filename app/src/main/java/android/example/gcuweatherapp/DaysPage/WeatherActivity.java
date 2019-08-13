@@ -13,6 +13,11 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
+
+/**
+ * Name: Elizabeth Michael Akpan
+ * Matric Number: S1719014
+ */
 public class WeatherActivity extends AppCompatActivity {
 
     @Override
@@ -22,14 +27,13 @@ public class WeatherActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String city = intent.getStringExtra("cityName");
 
-        TextView cityName = (TextView) findViewById(R.id.city);
+        TextView cityName = (TextView) findViewById(R.id.city_name);
         cityName.setText(city);
 
-        TextView textView = (TextView) findViewById(R.id.temp);
+        TextView textView = (TextView) findViewById(R.id.week_day);
 
         ArrayList<Weather> location = DataStore.getWeatherData().get(city);
         textView.setText(location.get(0).getDescription());
-
 
     }
 }

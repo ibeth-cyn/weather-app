@@ -1,5 +1,9 @@
 package android.example.gcuweatherapp.RSSFeed;
 
+/**
+ * Name: Elizabeth Michael Akpan
+ * Matric Number: S1719014
+ */
 public class Weather {
 
     private String title;
