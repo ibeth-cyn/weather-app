@@ -7,11 +7,16 @@ import android.example.gcuweatherapp.RSSFeed.RSSFeed;
 import android.example.gcuweatherapp.RSSFeed.Weather;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ExpandableListAdapter;
+import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 
 /**
@@ -20,20 +25,36 @@ import java.util.ArrayList;
  */
 public class WeatherActivity extends AppCompatActivity {
 
+    ExpandableListView expandableListView;
+    ExpandableListAdapter expandableListAdapter;
+    List<String> weekDay;
+    HashMap<String, List<String>> forecastDetail;
+//    HashMap<String, List<Weather>> forecastDetail;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
+        expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
         Intent intent = getIntent();
         String city = intent.getStringExtra("cityName");
-
-        TextView cityName = (TextView) findViewById(R.id.city_name);
-        cityName.setText(city);
-
-        TextView textView = (TextView) findViewById(R.id.week_day);
-
         ArrayList<Weather> location = DataStore.getWeatherData().get(city);
-        textView.setText(location.get(0).getDescription());
+        weekDay=new ArrayList<>();
+        forecastDetail = new HashMap<>();
+        for (Weather day:location){
+            weekDay.add(day.getDay());
+            String[] weatherData = new String[4];
+            weatherData[0] = "publicationDate" + day.getPublicationDate();
+            weatherData[1] = "minimumTemperature=" + day.getMinimumTemperature();
+            weatherData[2] = "windDirection=" + day.getWindDirection();
+            weatherData[3] = "humidity=" + day.getHumidity();
+            forecastDetail.put(day.getDay(), Arrays.asList(weatherData));
+
+        }
+
+        expandableListAdapter = new WeatherAdapter(this, weekDay, forecastDetail);
+        expandableListView.setAdapter(expandableListAdapter);
+
 
     }
 }

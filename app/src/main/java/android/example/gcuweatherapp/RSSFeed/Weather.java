@@ -45,7 +45,8 @@ public class Weather {
         final String COLON_DELIMITER = ":";
 
         String splitTitle [] = title.split(COMMA_DELIMITER);
-        String day = splitTitle[0].split(COLON_DELIMITER)[0];
+        this.day = splitTitle[0].split(COLON_DELIMITER)[0];
+//        this.setDay(day);
         weatherDescription = splitTitle[0].split(COLON_DELIMITER)[1];
 
         String splitDescription [] = description.split(COMMA_DELIMITER);
@@ -253,5 +254,26 @@ public class Weather {
                 ", rain='" + rain + '\'' +
                 ", weatherDescription='" + weatherDescription + '\'' +
                 '}';
+    }
+
+    public String toStringDel() {
+        return  "publicationDate=" + publicationDate +
+                "; minimumTemperature='" + minimumTemperature +
+                "; maximumTemperature='" + maximumTemperature+
+                "; windDirection='" + windDirection +
+                "; windSpeed='" + windSpeed +
+                "; visibility='" + visibility +
+                "; pressure='" + pressure + '\'' +
+                "; humidity='" + humidity + '\'' +
+                "|| uvRisk='" + uvRisk + '\'' +
+                "|| pollution='" + pollution + '\'' +
+                "|| sunset='" + sunset + '\'' +
+                "|| sunrise='" + sunrise + '\'' +
+                "|| date='" + date + '\'' +
+                "|| day='" + day + '\'' +
+                "|| tonight='" + tonight + '\'' +
+                "|| rain='" + rain + '\'' +
+                "|| weatherDescription='" + weatherDescription
+                ;
     }
 }

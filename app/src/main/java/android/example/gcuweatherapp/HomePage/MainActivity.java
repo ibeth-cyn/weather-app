@@ -25,14 +25,10 @@ public class MainActivity extends AppCompatActivity {
     private CityNameAdapter cityNameAdapter;
     private String city_names[];
 
-    //RSSFeed newRssFeed = new RSSFeed();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //System.out.println(newRssFeed.execute());
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();

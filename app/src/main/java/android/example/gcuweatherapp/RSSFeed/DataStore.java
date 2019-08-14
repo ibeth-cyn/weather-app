@@ -8,7 +8,9 @@ import java.util.HashMap;
  * Matric Number: S1719014
  */
 public class DataStore {
+
     public static HashMap<String, ArrayList<Weather>> getWeatherData() {
+
         return weatherData;
     }
 
