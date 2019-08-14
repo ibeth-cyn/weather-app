@@ -29,7 +29,6 @@ public class WeatherActivity extends AppCompatActivity {
     ExpandableListAdapter expandableListAdapter;
     List<String> weekDay;
     HashMap<String, List<String>> forecastDetail;
-//    HashMap<String, List<Weather>> forecastDetail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +42,15 @@ public class WeatherActivity extends AppCompatActivity {
         forecastDetail = new HashMap<>();
         for (Weather day:location){
             weekDay.add(day.getDay());
-            String[] weatherData = new String[4];
-            weatherData[0] = "publicationDate" + day.getPublicationDate();
-            weatherData[1] = "minimumTemperature=" + day.getMinimumTemperature();
-            weatherData[2] = "windDirection=" + day.getWindDirection();
-            weatherData[3] = "humidity=" + day.getHumidity();
+            String[] weatherData = new String[8];
+            weatherData[0] =  day.getPublicationDate();
+            weatherData[1] = "Minimum Temperature: " + day.getMinimumTemperature();
+            weatherData[2] = "Wind Direction: " + day.getWindDirection();
+            weatherData[3] = "Humidity: " + day.getHumidity();
+            weatherData[4] = "Visibility: " + day.getVisibility();
+            weatherData[5] = "UV Risk: " + day.getUvRisk();
+            weatherData[6] = "Name: Elizabeth Michael Akpan";
+            weatherData[7] = "Matric Number: S1719014";
             forecastDetail.put(day.getDay(), Arrays.asList(weatherData));
 
         }

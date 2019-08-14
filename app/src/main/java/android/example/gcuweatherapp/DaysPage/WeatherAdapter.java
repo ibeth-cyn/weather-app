@@ -21,7 +21,6 @@ public class WeatherAdapter extends BaseExpandableListAdapter {
     private Context context;
     private List<String> expandableListTitle;
     private HashMap<String, List<String>> expandableListDetail;
-//    private HashMap<String, List<Weather>> expandableListDetail;
 
     public WeatherAdapter(Context context, List<String> expandableListTitle,
                                        HashMap<String, List<String>> expandableListDetail)

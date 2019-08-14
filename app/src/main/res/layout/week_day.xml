@@ -10,8 +10,10 @@
         android:id="@+id/week_day"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/lato"
+        android:textSize="25dp"
+        android:textColor="#707070"
         android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
-        android:textColor="@android:color/black"
         android:paddingTop="10dp"
         android:paddingBottom="10dp" />
 
